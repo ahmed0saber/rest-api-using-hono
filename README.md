@@ -3,7 +3,7 @@
 A template of REST API app using [Hono](https://hono.dev/) framework
 
 ```
-deno run --allow-net main.ts
+deno run --watch --allow-net main.ts
 ```
 
 This starts the server at http://localhost:8000/

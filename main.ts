@@ -1,4 +1,5 @@
 import { Hono } from "https://deno.land/x/hono@v3.4.1/mod.ts";
+import { cors } from "https://deno.land/x/hono@v3.12.10/middleware.ts";
 import data from "./data.json" assert { type: "json" };
 
 const app = new Hono();
@@ -16,5 +17,7 @@ app.get("/api/:dinosaur", (c) => {
     return c.text("No dinosaurs found.");
   }
 });
+
+app.use(cors());
 
 Deno.serve(app.fetch);
